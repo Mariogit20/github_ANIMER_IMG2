@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 3 Séquences</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            font-family: sans-serif;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .parent {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+            transform-style: preserve-3d;
+            border-radius: 20px;
+            
+            /* On définit les propriétés de fond ici pour éviter la répétition */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            /* Application de votre animation */
+            animation: bg 12s infinite;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .card:hover .parent {
+            /* Rotation selon votre code (100deg) */
+/*            
+            transform: rotateY(100deg);
+*/
+            transform: rotateY(180deg);            
+        }
+
+        /* Votre animation avec les exemples d'images */
+/*
+https://gemini.google.com/app/1ec2723acfc1e03c?hl=fr
+https://gemini.google.com/app/1ec2723acfc1e03c?hl=fr
+https://gemini.google.com/app/1ec2723acfc1e03c?hl=fr
+https://gemini.google.com/app/1ec2723acfc1e03c?hl=fr
+https://gemini.google.com/app/1ec2723acfc1e03c?hl=fr
+*/
+        @keyframes bg {
+            0% {
+/*                
+background-image: url('https://picsum.photos/id/1011/300/400');
+*/
+                background-image: url('../image/avatar-3.jpg');
+            }
+            40% {
+/*
+                background-image: url('https://picsum.photos/id/1012/300/400');
+*/
+                background-image: url('../image/avatar-4.jpg');
+            }
+            100% {
+/*
+                background-image: url('https://picsum.photos/id/1027/300/400');
+*/
+                background-image: url('../image/avatar-5.jpg');
+            }
+        }        
+/*
+        @keyframes bg {
+            0% {
+                background-image: url('https://picsum.photos/id/1011/300/400');
+            }
+            40% {
+                background-image: url('https://picsum.photos/id/1012/300/400');
+            }
+            100% {
+                background-image: url('https://picsum.photos/id/1027/300/400');
+            }
+        }
+*/
+
+        /* Petit effet de texte pour la visibilité */
+        .content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="parent">
+            <div class="content">
+                <h3>Séquence Photo</h3>
+                <p>L'image change à 40% et 100%</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
